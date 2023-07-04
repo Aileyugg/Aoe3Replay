@@ -1,5 +1,6 @@
 <script setup>
 // import HelloWorld from '@/components/HelloWorld.vue'
+// 测试
 </script>
 
 <template>
