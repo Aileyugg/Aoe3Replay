@@ -126,7 +126,7 @@ async function uploadFile(fileIndex, msgElement) {
 
   await fetch(`${url}api/upload`, {
     method: 'POST',
-    headers: { 
+    headers: {
       'Content-Type': 'application/json',
       token: localStorage.getItem('token')
     },
@@ -276,7 +276,7 @@ header {
   overflow: hidden;
   background: #C79037;
 
-  > input {
+  >input {
     width: 300px;
     height: 56px;
     position: absolute;
@@ -286,7 +286,7 @@ header {
     left: 0;
   }
 
-  > span {
+  >span {
     font-size: 16px;
   }
 }
@@ -302,12 +302,12 @@ header {
   align-items: center;
   justify-content: center;
 
-  > .drop-text {
+  >.drop-text {
     font-size: 16px;
     color: #818182;
     pointer-events: none;
 
-    > .icon-upload {
+    >.icon-upload {
       margin-right: 6px;
       font-size: 26px;
     }
@@ -326,32 +326,33 @@ header {
   box-sizing: border-box;
   background: rgb(238 238 238 / 80%);
 
-  > li {
+  >li {
     display: grid;
     grid-template-columns: 42px 1fr 100px;
     justify-items: start;
     padding: 8px 12px;
 
-    > .icon-file {
+    >.icon-file {
       font-size: 28px;
       pointer-events: none;
     }
 
-    > .file-name {
+    >.file-name {
       cursor: pointer;
       pointer-events: none;
     }
 
-    > .uploading {
+    >.uploading {
       pointer-events: none;
     }
   }
 
-  > .active {
+  >.active {
     border-radius: 8px;
     background: #ccc;
   }
 }
+
 .replay-info {
   display: grid;
   grid-gap: 16px 16px;
@@ -364,19 +365,19 @@ header {
   padding: 32px 46px 32px 26px;
   background: rgb(238 238 238 / 80%);
 
-  > .name {
+  >.name {
     margin-top: 10px;
     /* font-size: 16px; */
     font-weight: 600;
   }
 
-  > .map {
+  >.map {
     display: flex;
     grid-row: 1 / 5;
     flex-direction: column;
     align-items: center;
 
-    > img {
+    >img {
       height: 160px;
       margin: 10px 0;
     }
@@ -384,7 +385,7 @@ header {
 
   .players {
 
-    > .player {
+    >.player {
       display: grid;
       grid-template-columns: 72px 1fr 80px;
       height: 46px;
@@ -393,7 +394,7 @@ header {
       background: #ccc;
       align-items: center;
 
-      > img {
+      >img {
         height: 30px;
         margin: 0 10px;
         border-radius: 6px;

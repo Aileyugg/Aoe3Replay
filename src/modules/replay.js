@@ -11,9 +11,16 @@ export function parseReplay(uint8Ary) {
   const version = exeInf.split(' ')[1]
 
   skipBytes(12)
+  if (version >= 305820) {
+    bufLen = readInt32()
+    readString(bufLen)
+  }
   bufLen = readInt32()
   readString(bufLen)
   skipBytes(60)
+  if (version >= 305820) {
+    skipBytes(4)
+  }
   readInfString('gamename')
   readInfInt32('gametype')
   readInfBool('gamerestored')
