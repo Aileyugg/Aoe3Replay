@@ -58,7 +58,7 @@ import User from '@/components/User.vue'
   background: rgb(238 238 238 / 80%);
   flex-direction: column;
 
-  > header {
+  >header {
     font-size: 20px;
     font-weight: 700;
     text-align: center;
@@ -84,7 +84,7 @@ import User from '@/components/User.vue'
   grid-column-gap: 10px;
   height: 36px;
 
-  > select {
+  >select {
     #lib.select();
 
     &:focus {
@@ -92,7 +92,7 @@ import User from '@/components/User.vue'
     }
   }
 
-  > input {
+  >input {
     #lib.select();
   }
 }
@@ -104,22 +104,22 @@ import User from '@/components/User.vue'
   height: 36px;
   margin-top: 12px;
 
-  > select {
+  >select {
     #lib.select();
 
     &:focus {
       #lib.select-focus()
     }
   }
-  
-  > button {
+
+  >button {
     border-radius: 8px;
     width: 180px;
     background: #C79037;
   }
 }
 
-.replay-list{
+.replay-list {
   margin-top: 24px;
   border-top: solid 2px #999;
   padding-top: 16px;

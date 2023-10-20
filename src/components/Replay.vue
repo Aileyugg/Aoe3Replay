@@ -66,8 +66,10 @@ async function replayInfo(file) {
   const arrayBuffer = await file.arrayBuffer()
   const md5 = hashMd5(arrayBuffer)
   const buffer = inflateRaw(arrayBuffer.slice(10))
+  console.time('replay')
   const replayInfo = parseReplay(buffer)
-  console.log(replayInfo.map);
+  console.timeEnd('replay')
+  console.log(replayInfo);
   const fileName = getFileName(replayInfo.players, replayInfo.map)
   return { ...replayInfo, md5, fileName }
 }

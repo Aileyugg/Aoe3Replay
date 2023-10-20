@@ -157,10 +157,12 @@ export function parseReplay(uint8Ary) {
     for (let i = 0; i < msgLen; i++) {
       readInt32(); // from
       readInt32(); // to
-      bufLen = readInt32();
+      // bufLen = readInt32();
+      readInfo();
       skipBytes(1)
     }
     duration += readInt8()
+    console.log(duration);
   }
 
   seachDuration()
@@ -169,7 +171,9 @@ export function parseReplay(uint8Ary) {
     const seachBytes = [0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x19]
     position = sunday(uint8Ary, seachBytes)
     
+    // let count = 0
     while (position !== -1) {
+      // count += 1
       // console.log('19:' + position);
       skipBytes(113)
       if (bufferLen === position) {
@@ -499,6 +503,7 @@ export function parseReplay(uint8Ary) {
       }
       position = sunday(uint8Ary, seachBytes, position)
     }
+    // console.log(count);
   }
   search()
 
@@ -674,7 +679,8 @@ function sunday(array, search, fromIndex = 0) {
   return -1
 }
 
-function parseJson(palyers, teams) {
+function parseJson(players, teams) {
+  console.log(players, teams);
   const playersAry = []
   const civMap = new Map([
     [1, 'Spanish'],
@@ -701,8 +707,8 @@ function parseJson(palyers, teams) {
     [45, 'DEMaltese']
   ])
 
-  for (const palyer of Object.keys(palyers)) {
-    const { id, civ, name } = palyers[palyer]
+  for (const palyer of Object.keys(players)) {
+    const { id, civ, name } = players[palyer]
     if (id === 0 || id === -1) continue
 
     let teamId
