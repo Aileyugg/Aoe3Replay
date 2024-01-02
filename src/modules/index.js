@@ -53,6 +53,7 @@ export async function upFetch(url, opts = {}, onProgress) {
   return new Promise((res, rej) => {
     const xhr = new XMLHttpRequest();
     xhr.open(opts.method || 'GET', url);
+    
     for (let key of Object.keys(opts.headers || {})) xhr.setRequestHeader(key, opts.headers[key]);
     xhr.onload = (e) => res(e.target.responseText);
     xhr.onerror = rej;

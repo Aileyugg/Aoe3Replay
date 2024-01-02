@@ -1,8 +1,10 @@
 <script setup>
-import ReplayList from '@/components/ReplayList.vue'
-// import { ref } from 'vue'
-import { civs } from '@/assets/data.json'
-import User from '@/components/User.vue'
+import ReplayList from './ReplayList.vue';
+import { civs } from '@/assets/data.json';
+import User from '@/components/User.vue';
+import { baseUrl } from '@/config';
+
+console.log(baseUrl);
 </script>
 
 <template>

@@ -1,9 +1,9 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
   {
     path: '/',
-    component: () => import('@/components/Index.vue')
+    component: () => import('@/views/index/index.vue')
   },
   {
     path: '/replay',
@@ -17,7 +17,8 @@ const routes = [
     path: '/test',
     component: () => import('@/views/test/index.vue')
   }
-]
+];
+
 const router = createRouter({
   history: createWebHistory(),
   routes

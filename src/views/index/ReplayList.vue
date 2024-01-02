@@ -5,7 +5,10 @@ import Page from '@/components/Page.vue'
 import { splitPage, filter } from '@/modules'
 
 const replayData = await (async () => {
-  const replayData = await fetch(`${url}api/replay`).then((res) => res.json())
+  const replayData = await fetch(`${url}api/replay`).then((res) => {
+    console.log(res);
+    return res.json();
+  })
   const data = []
   for (const value of replayData) {
     const copy = { ...JSON.parse(value.content), ...value }
@@ -24,6 +27,8 @@ console.log(pageData);
 function download(fileId) {
   fetch(`${url}api/downloads?fileId=${fileId}`)
 }
+
+download('123');
 
 function updateData(page) {
   pageData.value = splitPage(replayData, page, pageSize)
